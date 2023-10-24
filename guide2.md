@@ -370,6 +370,14 @@ Propagación:
 
 • Trayectos múltiples: la señal puede tomar múltiples caminos para llegar al receptor. Las múltiples rutas de señal pueden interferir entre sí, lo que resulta en interferencias en el receptor.
 
+•	Interferencia:
+
+La interferencia es un fenómeno en el que múltiples dispositivos o señales inalámbricos que operan en el mismo rango de frecuencia interrumpen o degradan la comunicación entre sí. Puede resultar en una disminución en el rendimiento de datos, un aumento en la latencia o incluso una pérdida total de conectividad. 
+
+Superposición de frecuencias: la comunicación es a través de canales de frecuencia específicos. Cuando los dispositivos funcionan en el mismo canal o en canales muy cercanos, existe la posibilidad de que se produzcan interferencias, porque las señales entran en competencia
+
+Hay diferentes tipos de interferencia como co-channel interference (cuando los dispositivos comparten el mismo canal o frecuencia), adjacent-channel interference (cuando dos dispositivos usan canales muy cercanos) y non-Wi-Fi interference. 
+
 
 5. Give examples of different wireless networking technologies used in computer networks.
 
