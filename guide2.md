@@ -406,19 +406,25 @@ following bit sequence:
 •	Manchester 
 
 El 1 se representa como una transición de alto a bajo en la mitad del período de bit, y el 0 lgico se representa como una transición de bajo a alto.
+
 Secuencia original : 1110 0101 0000 0011
+
 Manchester: 1010 1010 0101 0101
 
 •	4B/5B
 
 Asigna datos de 4 bits a palabras de código de 5 bits según una tabla predefinida.
+
 Secuencia original : 1110 0101 0000 0011
+
 4B/5B: 10010 10101 01100 00110
 
 •	NRZI
 
 En NRZI, la señal se invierte para cada 1 y permanece igual para 0
+
 Secuencia original : 1110 0101 0000 0011
+
 NRZI: 10111 10010 10100 11001
 
 
@@ -429,16 +435,19 @@ following bit sequence:
 •	Manchester 
 
 Secuencia original: 1101 1110 1010 1101 1011 1110 1110 1111
+
 Manchester: 0110 1001 0101 0110 0100 1001 1001 1000
 
 •	4B/5B
 
 Secuencia original : 1101 1110 1010 1101 1011 1110 1110 1111
+
 4B/5B: 10010 01001 10011 10010 11001 01001 01001 01110
 
 •	NRZI
 
 Secuencia original : 1101 1110 1010 1101 1011  1110 1110 1111
+
 NRZI: 010010 000011 010011 010010 010000 000001 000000 011100
 
 
@@ -449,59 +458,60 @@ NRZI: 010010 000011 010011 010010 010000 000001 000000 011100
 
 a) 
 Mensaje original:  1011 0010 0100 1011.
+
 Mensaje con ceros:  1011 0010 0100 1011 0000 0000
+
 Polinomio: 100000111
 
 Se dividen el mensaje con ceros para el polinomio
 
-•	 1011 0010 0100 1011 0000 0000 / 100000111
-Resto = 101000101011101
-•	101000101011101/ 100000111
-Resto = 110001110
-•	110001110/ 100000111
-Resto = 100010010
-•	100010010/ 100000111
-Resto = 101011011
-•	101011011/ 100000111
-Resto = 101110000
-•	101110000/ 100000111
-Resto = 111011100
-•	111011100/ 100000111
-Resto = 110110110
-•	110110110/ 100000111
-Resto = 101100010
-•	101100010/ 100000111
-Resto =  110010100
-•	110010100/ 100000111
-Resto = 10010011
+•	 1011 0010 0100 1011 0000 0000 / 100000111  ->  Resto = 101000101011101
+
+•	101000101011101/ 100000111  ->  Resto = 110001110
+
+•	110001110/ 100000111  ->  Resto = 100010010
+
+•	100010010/ 100000111  ->  Resto = 101011011
+
+•	101011011/ 100000111  ->  Resto = 101110000
+
+•	101110000/ 100000111  ->  Resto = 111011100
+
+•	111011100/ 100000111  ->  Resto = 110110110
+
+•	110110110/ 100000111  ->  Resto = 101100010
+
+•	101100010/ 100000111  ->  Resto =  110010100
+
+•	110010100/ 100000111  ->  Resto = 10010011
 
 El mensaje final que debe ser transmitido es: 1011 0010 0100 1011 1001 0011
 
 b) 
 
 Mensaje original:  1011 0010 0100 1011 1001 0011
+
 Polinomio: 100000111
 
-•	1011 0010 0100 1011 1001 0011 / 100000111
-Resto = 0011001011010111
-•	0011001011010111/ 100000111
-Resto = 100101010
-•	100101010/ 100000111
-Resto = 101101101
-•	101101101/ 100000111
-Resto = 110101011
-•	110101011/ 100000111
-Resto = 101011000
-•	101011000/ 100000111
-Resto = 101111101
-•	101111101/ 100000111
-Resto = 111101000
-•	111101000/ 100000111
-Resto = 111011111
-•	111011111/ 100000111
-Resto =  110110001
-•	110110001/ 100000111
-Resto = 10110110
+•	1011 0010 0100 1011 1001 0011 / 100000111  ->  Resto = 0011001011010111
+
+•	0011001011010111/ 100000111  ->  Resto = 100101010
+
+•	100101010/ 100000111  ->  Resto = 101101101
+
+•	101101101/ 100000111  ->  Resto = 110101011
+
+•	110101011/ 100000111  ->  Resto = 101011000
+
+•	101011000/ 100000111  ->  Resto = 101111101
+
+•	101111101/ 100000111  ->  Resto = 111101000
+
+•	111101000/ 100000111  ->  Resto = 111011111
+
+•	111011111/ 100000111  ->  Resto =  110110001
+
+•	110110001/ 100000111  ->  Resto = 10110110
 
 Como el resto no fue 0, el receptor sabe que ocurrió un error
 
@@ -515,7 +525,6 @@ Los timeouts que se deben utilizar son:
 •	Timeout de espera: si el emisor permanece inactivo durante un tiempo después de enviar un paquete y este se pierde, entonces el receptor no tiene manera de detectar la pérdida, por lo que se emplea un timeout de reenvío de NAK (RESEND-NAK)
 
 El principal problema con un protocolo basado en NAK, es que es menos eficiente que un protocolo basado en ACK. En el protocolo NACK, el receptor debe enviar un NAK por cada paquete perdido y el emisor debe retransmitirlo, esto sucede incluso cuando el paquete si llega pero el NAK no, lo que resulta en retransmisiones inccesarias y lleva mucho tiempo en corregir estos errores. También se produce una latencia más alta porque se debe esperar a que el NAK permita las retransmisiones, mientras que con ACK, la retransmisión es inmediata. 
-
 
 
 
