@@ -381,22 +381,142 @@ Hay diferentes tipos de interferencia como co-channel interference (cuando los d
 
 5. Give examples of different wireless networking technologies used in computer networks.
 
+•	Wi-Fi: permite que los dispositivos se conecten a wireless routers  o puntos de acceso para acceder a Internet y a los recursos de la red local.
+
+•	Bluetooth: es una tecnología inalámbrica de corto alcance diseñada para redes de área personal.
+
+•	Cellular Networks: 3G, 4G y 5G brindan conectividad inalámbrica en grandes áreas geográficas
+
+•	Zigbee: es una tecnología inalámbrica de bajo consumo y corto alcance comúnmente utilizada en aplicaciones de automatización del hogar y de Internet de las cosas (IoT).
+
+•	NFC (Near filed communication): es una tecnología inalámbrica de alcance extremadamente corto que se utiliza para la transferencia segura de datos
+
+•	RFID (Radio-Frequency Identification): es una tecnología inalámbrica utilizada para identificar y rastrear objetos y personas mediante etiquetas y lectores RFID.
+
+•	Satellite Communication: utiliza señales inalámbricas para conectarse con satélites en órbita, brindando cobertura global.
+
+
+
 ## Exercises
 
 1. Show the Manchester, 4B/5B encoding, and the resulting NRZI signal, for the
 following bit sequence:
 1110 0101 0000 0011
 
+•	Manchester 
+
+El 1 se representa como una transición de alto a bajo en la mitad del período de bit, y el 0 lgico se representa como una transición de bajo a alto.
+Secuencia original : 1110 0101 0000 0011
+Manchester: 1010 1010 0101 0101
+
+•	4B/5B
+
+Asigna datos de 4 bits a palabras de código de 5 bits según una tabla predefinida.
+Secuencia original : 1110 0101 0000 0011
+4B/5B: 10010 10101 01100 00110
+
+•	NRZI
+
+En NRZI, la señal se invierte para cada 1 y permanece igual para 0
+Secuencia original : 1110 0101 0000 0011
+NRZI: 10111 10010 10100 11001
+
+
 2. Show the Manchester, 4B/5B encoding, and the resulting NRZI signal, for the
 following bit sequence:
 1101 1110 1010 1101 1011 1110 1110 1111
+
+•	Manchester 
+
+Secuencia original: 1101 1110 1010 1101 1011 1110 1110 1111
+Manchester: 0110 1001 0101 0110 0100 1001 1001 1000
+
+•	4B/5B
+
+Secuencia original : 1101 1110 1010 1101 1011 1110 1110 1111
+4B/5B: 10010 01001 10011 10010 11001 01001 01001 01110
+
+•	NRZI
+
+Secuencia original : 1101 1110 1010 1101 1011  1110 1110 1111
+NRZI: 010010 000011 010011 010010 010000 000001 000000 011100
+
 
 3. Suppose we want to transmit the message "1011 0010 0100 1011" and protect it from errors using the CRC8 polynomial $x^8 + x^2 + x^1 + 1$.
 
 - Use polynomial long division to determine the message that should be transmitted.
 - Suppose the leftmost bit of the message is inverted due to noise on the transmission link. What is the result of the receiver’s CRC calculation? How does the receiver know that an error has occurred?
 
+a) 
+Mensaje original:  1011 0010 0100 1011.
+Mensaje con ceros:  1011 0010 0100 1011 0000 0000
+Polinomio: 100000111
+
+Se dividen el mensaje con ceros para el polinomio
+
+•	 1011 0010 0100 1011 0000 0000 / 100000111
+Resto = 101000101011101
+•	101000101011101/ 100000111
+Resto = 110001110
+•	110001110/ 100000111
+Resto = 100010010
+•	100010010/ 100000111
+Resto = 101011011
+•	101011011/ 100000111
+Resto = 101110000
+•	101110000/ 100000111
+Resto = 111011100
+•	111011100/ 100000111
+Resto = 110110110
+•	110110110/ 100000111
+Resto = 101100010
+•	101100010/ 100000111
+Resto =  110010100
+•	110010100/ 100000111
+Resto = 10010011
+
+El mensaje final que debe ser transmitido es: 1011 0010 0100 1011 1001 0011
+
+b) 
+
+Mensaje original:  1011 0010 0100 1011 1001 0011
+Polinomio: 100000111
+
+•	1011 0010 0100 1011 1001 0011 / 100000111
+Resto = 0011001011010111
+•	0011001011010111/ 100000111
+Resto = 100101010
+•	100101010/ 100000111
+Resto = 101101101
+•	101101101/ 100000111
+Resto = 110101011
+•	110101011/ 100000111
+Resto = 101011000
+•	101011000/ 100000111
+Resto = 101111101
+•	101111101/ 100000111
+Resto = 111101000
+•	111101000/ 100000111
+Resto = 111011111
+•	111011111/ 100000111
+Resto =  110110001
+•	110110001/ 100000111
+Resto = 10110110
+
+Como el resto no fue 0, el receptor sabe que ocurrió un error
+
+
 4. Consider an ARQ protocol that uses only negative acknowledgments (NAKs), but no positive acknowledgments (ACKs). Describe what timeouts would have to be scheduled. Explain why an ACK-based protocol is usually preferred to a NAK-based protocol.
+
+Los timeouts que se deben utilizar son:
+
+•	Timeout de retransmisión: cuando se envía un paquete y el emisor en cierto tiempo no recibe un NAK, se asume que el paquete fue recibido exitosamente y no se requiere una retransmisión del paquete. 
+
+•	Timeout de espera: si el emisor permanece inactivo durante un tiempo después de enviar un paquete y este se pierde, entonces el receptor no tiene manera de detectar la pérdida, por lo que se emplea un timeout de reenvío de NAK (RESEND-NAK)
+
+El principal problema con un protocolo basado en NAK, es que es menos eficiente que un protocolo basado en ACK. En el protocolo NACK, el receptor debe enviar un NAK por cada paquete perdido y el emisor debe retransmitirlo, esto sucede incluso cuando el paquete si llega pero el NAK no, lo que resulta en retransmisiones inccesarias y lleva mucho tiempo en corregir estos errores. También se produce una latencia más alta porque se debe esperar a que el NAK permita las retransmisiones, mientras que con ACK, la retransmisión es inmediata. 
+
+
 
 
 5. Draw a timeline diagram for the sliding window algorithm with SWS = RWS = 3 frames, for the following two situations. Use a timeout interval of about 2 × RTT.
