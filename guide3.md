@@ -59,24 +59,34 @@ No tiene tablas de enrutamiento ni inteligencia sobre dónde enviar información
 
 Funciona de la siguiente manera:
 
-Llegada del paquete:
-Cuando un paquete llega a uno de los puertos del conmutador, el conmutador examina el encabezado del paquete para extraer información crucial, como las direcciones MAC (Control de acceso a medios) de origen y destino.
-Búsqueda de tabla de direcciones MAC:
-El conmutador consulta su tabla de direcciones MAC (también conocida como tabla de reenvío o memoria direccionable de contenido - tabla CAM) para determinar el puerto asociado con la dirección MAC de destino. Esta tabla se crea y se mantiene dinámicamente a medida que los dispositivos se comunican a través del conmutador.
-Aprendizaje de direcciones:
-Si la dirección MAC de destino no se encuentra en la tabla, el conmutador aprende la asociación agregando una entrada para la dirección MAC de origen y el puerto correspondiente a través del cual llegó el paquete.
-Decisión de reenvío:
-Utilizando la información obtenida de la tabla de direcciones MAC, el conmutador toma una decisión de reenvío. Si la dirección MAC de destino ya está en la tabla, el conmutador reenvía el paquete directamente al puerto apropiado. Si la dirección no está en la tabla, el conmutador puede inundar el paquete a todos los puertos o consultar a un enrutador (si está configurado) para llegar a dispositivos en otras redes.
-Reenvío de paquetes:
-El conmutador reenvía el paquete al puerto determinado, asegurando que los datos lleguen al destino previsto. Este proceso se produce a velocidad de cable, lo que permite una conmutación de paquetes de alta velocidad y baja latencia.
-Actualizar la tabla de direcciones MAC:
-Después de reenviar exitosamente el paquete, el conmutador puede actualizar su tabla de direcciones MAC para reflejar la asociación de puerto y origen más reciente. Esto garantiza que los paquetes futuros destinados a la misma dirección se puedan reenviar de manera más eficiente.
-Manejo de transmisión y multidifusión:
-En casos de tráfico de difusión o multidifusión, el conmutador puede reenviar el paquete a todos los puertos o a puertos específicos donde se encuentran los destinatarios previstos, según las direcciones MAC de destino.
+• Llegada del paquete: cuando un paquete llega a uno de los puertos del switch, este examina el encabezado del paquete para extraer información crucial, como las direcciones MAC de origen y destino.
+
+• Búsqueda de tabla de direcciones MAC: el switch consulta su tabla de direcciones MAC para determinar el puerto asociado con la dirección MAC de destino. Esta tabla se crea y se mantiene dinámicamente a medida que los dispositivos se comunican a través del switch.
+
+• Aprendizaje de direcciones: si la dirección MAC de destino no se encuentra en la tabla, el switch aprende agregando una entrada para la dirección MAC de origen y el puerto correspondiente a través del cual llegó el paquete.
+
+• Decisión de reenvío: si la dirección MAC de destino ya está en la tabla, el switch reenvía el paquete directamente al puerto apropiado. Si no, el switch puede hacer flooding del paquete a todos los puertos
+
+• Reenvío de paquetes: el switch reenvía el paquete al puerto determinado, asegurando que los datos lleguen al destino previsto. Este proceso se produce a velocidad de cable, lo que permite que sea de alta velocidad y baja latencia.
+
+• Actualizar la tabla de direcciones MAC: después de reenviar exitosamente el paquete, el switch actualiza su tabla de direcciones MAC para reflejar la asociación de puerto y origen más reciente. Esto garantiza que los paquetes futuros destinados a la misma dirección se puedan reenviar de manera más eficiente.
+
 
 6. What is store-and-forward switching? How does it ensure data integrity?
 
+Es una técnica de switching de red en la que un dispositivo de red recibe y almacena la trama de datos completa antes de reenviarla al siguiente dispositivo de la red. En este proceso, el switch examina toda la trama en busca de errores, descarta las tramas con errores y solo reenvía tramas sin errores. 
 
+Así garantiza la integridad de los datos:
+
+• Recepción de frames: el switch recibe la trama de datos completa antes de comenzar el proceso de reenvío. Esto incluye el encabezado, los datos y el avance del marco.
+
+• Comprobación de errores: el switch realiza una verificación de errores en la trama recibida, utilizando la secuencia de verificación de trama (FCS), que es una suma de comprobación, en el avance de la trama.
+
+• Almacenamiento de marcos: si la trama pasa la verificación de errores, el switch almacena la trama completa en su memoria intermedia.
+
+• Decisión de reenvío: después de almacenar la trama y confirmar su integridad, el switch toma una decisión de reenvío basándose en la dirección de destino de la trama. Luego, comienza a reenviar la trama al puerto de salida apropiado.
+
+La integridad de los datos se asegura mediante la recepción completa y almacenamiento del marco de datos, seguido de una verificación de errores. Solo los marcos libres de errores se reenvían, garantizando que la integridad de los datos se mantenga a lo largo de la red. Este enfoque contribuye a la detección y corrección de errores, evitando la propagación de datos corruptos en la red.
 
 
 ### Exercises:
