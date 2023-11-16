@@ -92,16 +92,54 @@ La integridad de los datos se asegura mediante la recepción completa y almacena
 ### Exercises:
 1. Compare and contrast the performance characteristics of circuit switching and packet switching.
 
+• Utilización de recursos:
 
+- Circuit switching: uso ineficiente de los recursos, ya que se reserva una ruta dedicada durante toda la conversación, independientemente de si los datos se transmiten activamente.
+
+- Packet switching: utilización más eficiente de los recursos, ya que el ancho de banda se comparte entre varios usuarios, lo que permite una asignación dinámica según la demanda.
+
+• Latencia:
+
+- Circuit switching: menor latencia ya que la ruta dedicada se establece antes de que comience la transmisión de datos.
+
+- Packet switching: mayor variabilidad de latencia debido al procesamiento de almacenamiento y reenvío y posibles retrasos en las colas. 
+
+• Adaptabilidad:
+
+- Circuit switching: menos adaptable a velocidades de datos variables y patrones de tráfico en ráfagas. Adecuado para flujos de datos continuos.
+
+- Packet switching: Altamente adaptable a diferentes tipos de datos, velocidades de datos variables y patrones de tráfico en ráfagas.
+
+• Previsibilidad:
+
+- Circuit switching: rendimiento predecible y estable para flujos de datos continuos.
+
+- Packet switching: el rendimiento puede ser menos predecible, especialmente durante períodos de congestión de la red.
+
+• Escalabilidad:
+
+- Circuit switching: escalabilidad limitada ya que se requiere una ruta dedicada para cada conversación, lo que la hace menos adecuada para redes con una gran cantidad de dispositivos.
+
+- Packet switching:ltamente escalable, lo que la hace adecuada para redes con numerosos dispositivos.
 
 2. Research and list three different types of switches commonly used in computer networks.
 
+• Eternet switch: son el tipo más común de conmutadores utilizados en LAN. Operan en la capa de enlace de datos (Capa 2) y utilizan direcciones MAC para reenviar tramas de datos a los dispositivos apropiados dentro de la misma red. Los conmutadores Ethernet son cruciales para crear LAN eficientes y de alto rendimiento.
+
+• Multilayer switch: opera tanto en la capa de enlace de datos (Capa 2) como en la capa de red (Capa 3)  Además del reenvío basado en direcciones MAC, puede tomar decisiones de enrutamiento basadas en direcciones IP. Combinan las funciones de un switch y un hub, ofreciendo eficiencia y rendimiento mejorados.
+
+• Managed switch : brindan características y capacidades más avanzadas que los unmanaged switches. Optimizan el rendimiento de la red, monitorean el tráfico e implementan medidas de seguridad. Admiten funciones como VLAN, QoS y duplicación de puertos, lo que proporciona un mayor control de la red
 
 
 3. Design a simple network topology using switches to connect multiple computers. Label the switches and computers in your diagram.
 
+<img width="367" alt="Captura de pantalla" src="https://github.com/emiliasaenz/emiliasaenz/assets/143628612/4b1fb086-8ac4-4672-9781-13279780c621">
 
-`
+• Es una topología en estrella donde todas las computadoras están conectadas a un switch central (Switch 1).
+
+• El switch B está conectado al switch A, creando una estructura jerárquica.
+
+• Las computadoras 1 y 2 están conectadas directamente al Switch 1
 
 ## Switched Ethernet
 
