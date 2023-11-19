@@ -332,11 +332,11 @@ En el proceso de enrutamiento, al recibir un paquete de datos, un enrutador exam
 
 4. What is the purpose of a default gateway in routing?
 
-
+El default getaway funciona como punto de salida para el tráfico sin una ruta específica en la tabla de enrutamiento local. Cuando un dispositivo busca comunicarse con un destino más allá de su red o subred local, verifica su tabla de enrutamiento; si no se encuentra una ruta explícita, se utiliza el default gateway. Esta ruta predeterminada es crucial para enrutar el tráfico externo, manejar paquetes con destinos desconocidos y conectar diferentes subredes dentro de la red. Además, el default gateway desempeña un papel clave a la hora de facilitar el acceso a Internet, actuando como el punto central a través del cual el tráfico saliente puede llegar a redes externas, convirtiéndolo en un elemento integral para una comunicación fluida entre los dispositivos dentro de la red e Internet en general.
 
 5. Describe the process of routing a packet from source to destination.
 
-
+Enrutar un paquete desde el origen al destino en una red implica un proceso sistemático en el que el dispositivo de origen genera un paquete de datos con direcciones IP de origen y destino. El dispositivo de origen consulta su tabla de enrutamiento para determinar el siguiente salto y la interfaz de salida, y reenvía el paquete en consecuencia. Los enrutadores a lo largo del camino continúan tomando decisiones de enrutamiento basándose en sus tablas, mientras que los switch facilitan el reenvío dentro de los segmentos de la red local utilizando direcciones MAC. El paquete llega a la subred de destino y la dirección MAC del dispositivo de destino se resuelve mediante ARP. Tras la entrega al dispositivo de destino, el paquete se somete a un procesamiento de capa IP, dirigiendo la carga útil a la aplicación o servicio relevante. A lo largo de este proceso, las tablas de enrutamiento, las tablas de direcciones MAC y los protocolos como ARP e IP garantizan un reenvío de paquetes preciso y eficiente, lo que permite una comunicación fluida entre dispositivos.
 
 
 ## Exercises
