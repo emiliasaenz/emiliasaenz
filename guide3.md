@@ -179,6 +179,10 @@ En esencia, garantiza la creación de una topología de red estable y eficiente 
 
 5. What are VLANs?
 
+Las redes de área local virtuales son una técnica de gestión de redes que permite la segmentación lógica de una red física en múltiples redes virtuales. Esta segmentación es independiente del diseño físico, lo que permite a los administradores de red agrupar dispositivos según criterios como función, departamento o requisitos de seguridad. Las VLAN proporcionan un medio para crear dominios de transmisión aislados dentro de una única red física, lo que mejora la seguridad y la eficiencia de la red.
+
+Los dispositivos dentro de la misma VLAN son parte de un dominio de transmisión compartido, que contiene el tráfico de transmisión dentro de los límites de esa VLAN y evita la propagación innecesaria a dispositivos en otras VLAN. Este aislamiento contribuye a optimizar el ancho de banda y el rendimiento de la red. Además ofrecen flexibilidad y escalabilidad, lo que permite a los administradores adaptar las configuraciones de red a los requisitos cambiantes sin necesidad de volver a cablear físicamente. Esto es particularmente ventajoso en grandes redes u organizaciones con necesidades operativas dinámicas. 
+
 
 ## Internet (IP)
 
