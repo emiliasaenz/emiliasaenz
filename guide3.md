@@ -229,6 +229,13 @@ IPv6 incorpora características como IPsec como requisito estándar, lo que mejo
 
 3. What is an IP address? How is it structured?
 
+Una dirección IP, es una etiqueta numérica asignada a cada dispositivo que participa en una red que utiliza el Protocolo de Internet para comunicarse. Las direcciones IP tienen dos propósitos principales: identificar el host o la interfaz de red y proporcionar la ubicación del host en la red. Hay dos versiones principales de direcciones IP: IPv4 e IPv6.
+
+Las direcciones IPv4, utilizan un formato de dirección de 32 bits y se expresan como cuatro conjuntos de números decimales. Cada número decimal, u octeto, representa 8 bits de la dirección general. La estructura de las direcciones IPv4 implica una división en porciones de red y host, determinada por la máscara de subred, que especifica los bits que representan la red y el host dentro de una red determinada.
+
+IPv6, introducido para abordar las limitaciones de IPv4, utiliza un formato de dirección de 128 bits expresado como ocho grupos de cuatro dígitos hexadecimales. La estructura de direcciones IPv6 es jerárquica: el prefijo de enrutamiento global identifica la red general, el ID de subred identifica las subredes dentro de la red y el ID de interfaz identifica de forma única un host o interfaz específico dentro de una subred.
+
+Tanto IPv4 como IPv6 tienen rangos de direcciones reservados para fines específicos, como redes privadas y direcciones de bucle invertido. Las direcciones IP se pueden asignar de forma estática o dinámicamente.
 
 
 4. What is the purpose of subnetting in IP addressing?
