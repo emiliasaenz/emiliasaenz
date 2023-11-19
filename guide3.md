@@ -189,10 +189,42 @@ Los dispositivos dentro de la misma VLAN son parte de un dominio de transmisión
 ### Questions:
 1. What is the Internet Protocol (IP)? How does it work?
 
+El Protocolo de Internet sirve como un conjunto fundamental de reglas que rigen la transmisión de datos a través de redes y desempeña un papel vital en la comunicación por Internet y LAN. Al operar en la capa de red, emplea etiquetas numéricas (direcciones IP) para identificar de forma única los dispositivos en una red. Las direcciones IP son esenciales para el enrutamiento, ya que permiten a los enrutadores dirigir paquetes de datos a sus destinos a través de redes interconectadas.
+
+El proceso de comunicación IP, basado en packet switching, implica direccionar dispositivos con direcciones IP únicas, dividir los datos en paquetes y la toma de decisiones de los switches para el reenvío basadas en las direcciones IP de destino. Los paquetes viajan de forma independiente y sin ninguna conexión preestablecida, a través de la red, tomando distintos caminos antes de llegar a su destino. A su llegada, los paquetes se reensamblan para reconstruir los datos originales, y el dispositivo receptor utiliza la dirección IP de destino para identificar y organizar los paquetes que pertenecen a la misma sesión de comunicación.
+
+En esencia, IP sirve como columna vertebral de la comunicación global, proporcionando un enfoque estandarizado y escalable para que los dispositivos intercambien datos a través de diversas redes. Sus características, que incluyen direccionamiento, paquetización, enrutamiento y operación sin conexión, contribuyen a la eficiencia y confiabilidad de la transmisión de datos en el Internet.
 
 
 2. Explain the difference between IPv4 and IPv6.
 
+• Longitud de la dirección:
+
+- IPv4: tiene 32 bits de longitud, lo que da como resultado aproximadamente 4,3 mil millones de direcciones únicas
+  
+- IPv6: tiene 128 bits de longitud, lo que proporciona un espacio de direcciones astronómicamente mayor: alrededor de 3,4 x 10^38 direcciones únicas
+
+• Notación de dirección:
+
+- IPv4: las direcciones IPv4 se expresan en notación decimal con puntos, con cuatro conjuntos de números decimales separados por puntos (por ejemplo, 192.168.1.1)
+  
+- IPv6:  las direcciones IPv6 utilizan notación hexadecimal y se expresan como ocho grupos de cuatro dígitos hexadecimales, separados por dos puntos (por ejemplo, 2001:0db8:85a3:0000:0000:8a2e:0370:7334)
+
+• Configuración de dirección:
+
+- IPv4: las direcciones IPv4 se pueden configurar manualmente (estáticas) o asignarse dinámicamente a través de protocolos como DHCP
+  
+- IPv6: incorpora configuración automática de direcciones sin estado, lo que permite a los dispositivos generar sus propias direcciones basadas en información de la red
+
+• Radiodifusión:
+
+- IPv4: utiliza comunicación de transmisión para enviar datos a todos los dispositivos en un segmento de red
+  
+- IPv6: elimina la comunicación de transmisión tradicional, y utiliza métodos más eficientes de multidifusión y difusión directa, lo que reduce el tráfico innecesario.
+
+• Seguridad y Movilidad:
+
+IPv6 incorpora características como IPsec como requisito estándar, lo que mejora las capacidades de seguridad. Además, IPv6 está diseñado para admitir dispositivos móviles de manera más efectiva, con funciones integradas para movilidad y flexibilidad de configuración.
 
 
 3. What is an IP address? How is it structured?
