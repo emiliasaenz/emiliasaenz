@@ -146,6 +146,11 @@ La integridad de los datos se asegura mediante la recepción completa y almacena
 ### Questions:
 1. What is Ethernet? How does it work?
 
+Ethernet es un estándar utilizado para redes LAN, que define el hardware y los protocolos de comunicación utilizados para conectar diferentes dispositivos dentro de una red localizada, y así obtener una transmisión rápida de datos a través de cables coaxiales o de fibra óptica. Opera en la capa de enlace de datos (Capa 2) y la capa física (Capa 1) del modelo OSI, y divide la capa de conexión de datos en dos capas distintas: la capa de control de enlace lógico y también la capa de control de acceso al medio (MAC). 
+
+Proporciona una interfaz de usuario sencilla. Es más confiables y menos susceptibles a interferencias o colisiones de paquetes que las redes inalámbricas. Algunas redes de Ethernet funcionan en modo dúplex y otras se basan en el protocolo CSMA/CD, para permitir que cada computadora escuche la conexión antes de enviar datos a través de la red. Emplea una topología en estrella o bus lineal. 
+
+La transmisión de tramas Ethernet implica que un dispositivo encapsula datos en una trama Ethernet para enviarlos a otro dispositivo en la misma red, y la trama contiene información esencial como direcciones MAC de origen y destino. Cada dispositivo en la red Ethernet posee una dirección MAC única para un direccionamiento efectivo, designando el origen y el destinatario previsto. En las redes Ethernet tradicionales que funcionan en modo Half-Duplex, se emplea la detección de colisiones, donde los dispositivos escuchan las señales portadoras antes de transmitir para evitar colisiones y, si se detectan, un período de interrupción aleatorio precede a la retransmisión. En las redes Ethernet modernas con conmutadores que funcionan en modo Full-Duplex, la comunicación es más eficiente ya que los switches utilizan tablas de direcciones MAC para reenviar tramas de forma inteligente, lo que reduce las colisiones.
 
 
 2. Explain the concept of a collision domain in Ethernet.
