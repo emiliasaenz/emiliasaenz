@@ -155,11 +155,16 @@ La transmisión de tramas Ethernet implica que un dispositivo encapsula datos en
 
 2. Explain the concept of a collision domain in Ethernet.
 
+El dominio de colisión se refiere a la posibilidad de que tramas de datos colisionen al transmitirse en el mismo canal de comunicación. Este fenómeno es prominente en redes semidúplex, donde varios dispositivos comparten el mismo medio de comunicación y dependen del protocolo CSMA/CD para evitar colisiones. En este contexto, el dominio de colisión incluye todos los dispositivos en un segmento de red que comparten el mismo canal, requiriendo que otros dispositivos se abstengan de transmitir cuando uno está enviando datos para evitar colisiones. En redes más extensas o propensas a colisiones frecuentes, el rendimiento de la red puede disminuir debido a retransmisiones y una reducción en el rendimiento efectivo.
+
+La introducción de switches ha transformado la dinámica de los dominios de colisión. En una red con switches, cada puerto del conmutador representa un dominio de colisión independiente, aislando dispositivos conectados a diferentes puertos y reduciendo la probabilidad de colisiones. Este cambio mejora la eficiencia de la red, especialmente en entornos de comunicación full-duplex, donde los dispositivos pueden enviar y recibir simultáneamente sin depender del CSMA/CD.
+
+Con la evolución de las redes Ethernet, la adopción generalizada de la comunicación full-duplex y el uso extendido de conmutadores han mitigado considerablemente el impacto de las colisiones, volviendo menos relevante la noción de dominios de colisión en las implementaciones modernas de Ethernet.
 
 
 3. What are learning bridges?
 
-
+Un learning bridge reduce la cantidad de tráfico de transmisión en las LAN, ya que escucha todas las tramas en los dos segmentos de LAN tal como lo hace un bridge básico y aprende dónde está ubicada cada dirección física. Hace una lista de las direcciones físicas y a qué puerto están conectadas. Debido a que almacena cada trama a medida que la recibe, luego la reenvía de forma selectiva según la LAN en la que se encuentra esa dirección física. Siempre que encuentra una trama que contiene una dirección física que no conoce, reenvía esa trama a todos los demás puertos a las otras LAN.
 
 4. Explain the Spanning Tree Algorithm
 
