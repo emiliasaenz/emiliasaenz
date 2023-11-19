@@ -168,7 +168,13 @@ Un learning bridge reduce la cantidad de tráfico de transmisión en las LAN, ya
 
 4. Explain the Spanning Tree Algorithm
 
+Es un protocolo empleado en redes informáticas para evitar la aparición de bucles, broadcast storm e inestabilidad de la red en entornos Ethernet. El protocolo funciona designando un nodo raíz mediante un proceso que implica la elección del switch con el ID de nodo más bajo, combinando un valor de prioridad y una dirección MAC. El nodo raíz sirve como punto de referencia para establecer los caminos más cortos dentro de la red.
 
+Una vez que se identifica el nodo raíz, cada switch no raíz selecciona la ruta con el costo acumulativo más bajo para llegar a este. Simultáneamente, en cada segmento de red, el algoritmo designa un puerto designado con el costo de ruta más bajo hasta el nodo raíz. Luego, otros puertos en el segmento se colocan en un estado de bloqueo, lo que previene efectivamente los bucles al crear una topología similar a un árbol.
+
+El spanning tree monitorea continuamente la red en busca de cambios, adaptándose a las variaciones en la topología causadas por fallas o adiciones de enlaces. Esta adaptabilidad es crucial para mantener una estructura sin bucles. Además, el protocolo incorpora el Rapid Spanning Tree Protocol (RSTP), que mejora el tiempo de convergencia después de cambios de red, minimizando el tiempo necesario para que la red se estabilice.
+
+En esencia, garantiza la creación de una topología de red estable y eficiente seleccionando rutas óptimas, designando puertos específicos y ajustándose dinámicamente a los cambios, mitigando así los riesgos asociados con los bucles en las redes Ethernet.
 
 
 5. What are VLANs?
