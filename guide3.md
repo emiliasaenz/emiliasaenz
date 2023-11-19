@@ -344,3 +344,7 @@ Enrutar un paquete desde el origen al destino en una red implica un proceso sist
 ![net](./network.png)
 
 1. For the network given in figure above, show how the link-state algorithm builds the routing table for node D.
+
+<img width="163" alt="Captura de pantalla" src="https://github.com/emiliasaenz/emiliasaenz/assets/143628612/59a613ce-09e6-40dd-ade7-bde34a68c2b6">
+<img width="367" alt="Captura de pantalla" src="https://github.com/emiliasaenz/emiliasaenz/assets/143628612/8920f934-0795-440d-9b55-66d7d2fc74f0">
+
