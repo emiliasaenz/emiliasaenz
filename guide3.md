@@ -326,7 +326,9 @@ En general, el enrutamiento dinámico es superior, tanto en flexibilidad, como e
 
 3. What is a routing table? How is it used in the routing process?
 
+Una tabla de enrutamiento, alojada dentro de un enrutador, sirve como una estructura de datos que contiene información esencial sobre diversas rutas que conducen a destinos específicos en una red. Su función fundamental es ayudar a los enrutadores a tomar decisiones informadas sobre la ruta óptima para reenviar paquetes de datos desde el origen al destino. Cada entrada de la tabla incluye detalles de la red de destino, el enrutador para el reenvío de paquetes, la interfaz de red para el reenvío, el valor numérico que representa el costo de la ruta y la máscara de subred, que define los límites de la red para tomar decisiones de enrutamiento precisas. 
 
+En el proceso de enrutamiento, al recibir un paquete de datos, un enrutador examina la dirección IP de destino del paquete y consulta su tabla de enrutamiento para determinar el siguiente salto y la interfaz óptimos para el reenvío de paquetes. Esta determinación se basa en el prefijo coincidente más largo en la tabla de enrutamiento, establecido mediante una comparación de la dirección IP de destino con las entradas de la tabla. El proceso implica que el enrutador examine la dirección IP de destino del paquete entrante, busque una entrada coincidente en la tabla de enrutamiento utilizando el prefijo coincidente más largo y, posteriormente, seleccione el siguiente salto y la interfaz de salida adecuados. Una vez que se toman estas decisiones, el enrutador procede a reenviar el paquete al siguiente salto especificado utilizando la interfaz de salida designada, lo que permite un reenvío de paquetes de datos eficiente y preciso dentro de la red.
 
 4. What is the purpose of a default gateway in routing?
 
