@@ -312,10 +312,28 @@ Las direcciones IP se clasifican en tres clases principales según sus rangos de
 
 ### Questions:
 1. What is routing in computer networking?
+
+Routing es el proceso de dirigir paquetes de datos desde un origen a un destino a través de una red. Los routers utilizan tablas y algoritmos de enrutamiento para tomar decisiones sobre la ruta óptima para reenviar paquetes. El enrutamiento implica la actualización dinámica de las tablas de enrutamiento en función de los cambios y configuraciones de la red. Varios algoritmos y protocolos de enrutamiento, como RIP, OSPF y BGP, gobiernan la selección y el intercambio de información de enrutamiento entre routers. La elección entre métodos de enrutamiento estáticos y dinámicos, así como la evaluación de factores como el ancho de banda del enlace y la latencia, influyen en el proceso de selección de ruta. El enrutamiento desempeña un papel crucial al permitir la comunicación, el intercambio de datos y la entrega eficiente de datos en redes informáticas, lo que contribuye al rendimiento y la escalabilidad generales de la red.
+
 2. Explain the difference between static routing and dynamic routing.
+
+El enrutamiento estático implica que los administradores configuren manualmente tablas de enrutamiento y definan rutas predeterminadas para los paquetes de datos. Las rutas permanecen fijas a menos que los administradores las modifiquen. La simplicidad y previsibilidad del enrutamiento estático lo hacen ideal para redes pequeñas con topologías estables. Sin embargo, el enrutamiento estático tiene una falta de adaptabilidad a los cambios en la red. 
+
+El enrutamiento dinámico implica que los enrutadores utilizan protocolos de enrutamiento, como RIP, OSPF o BGP, para intercambiar y actualizar de forma autónoma información de enrutamiento con enrutadores vecinos, lo que facilita una comprensión dinámica de la topología de la red y la adaptación a los cambios. Es adecuado para entornos grandes y complejos. Sin embargo, el enrutamiento dinámico introduce complejidad y la posibilidad de un mayor tráfico de red debido al intercambio continuo de información. 
+
+En general, el enrutamiento dinámico es superior, tanto en flexibilidad, como en escalabilidad y mantenimiento. El enrutamiento dinámico es más adaptable a los cambios en la topología de la red y a modificaciones en redes más grandes con configuraciones cambiantes, además requiere menos mantenimiento manual una vez configurado.
+
+
 3. What is a routing table? How is it used in the routing process?
+
+
+
 4. What is the purpose of a default gateway in routing?
+
+
+
 5. Describe the process of routing a packet from source to destination.
+
 
 
 
