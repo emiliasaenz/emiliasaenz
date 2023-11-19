@@ -240,21 +240,73 @@ Tanto IPv4 como IPv6 tienen rangos de direcciones reservados para fines específ
 
 4. What is the purpose of subnetting in IP addressing?
 
+La creación de subredes en el direccionamiento IP sirve para varios propósitos en el diseño y administración de redes. El objetivo principal es mejorar la eficiencia de la red dividiendo una red grande en subredes más pequeñas y manejables. Esta división reduce el dominio de transmisión dentro de cada subred, minimizando el tráfico de transmisión y mejorando el rendimiento general de la red. 
 
-
-5. Describe the process of IP packet forwarding.
-
+La segmentación lógica de la red permite un mejor control del tráfico entre subredes, facilitando la implementación de routers y firewalls para contener brechas de seguridad y limitar el impacto de actividades maliciosas. Además, la creación de subredes optimiza la gestión de direcciones IP al permitir a los administradores asignar rangos de direcciones más pequeños y específicos a subredes individuales, lo que reduce el desperdicio de direcciones y promueve un uso más eficiente del espacio de direcciones disponible.
 
 
 6. What is the role of the Internet Control Message Protocol (ICMP) in IP?
 
+ICMP es una parte integral del conjunto de protocolos IP y sirve como protocolo de soporte. Una de sus funciones principales es gestionar los informes de errores en la transmisión de paquetes IP. Cuando se producen problemas como destinos inalcanzables o valores de tiempo de vida excedidos, ICMP genera mensajes de error para informar al host de origen o al dispositivo de red sobre el problema, lo que facilita la resolución de problemas y el diagnóstico efectivos.
 
+ICMP hace uso de la función ping, que utiliza mensajes ICMP Echo Request y Echo Reply. Ping es una herramienta para probar la accesibilidad de un host en una red IP, proporcionando un medio sencillo de diagnóstico de red. Además, ICMP contribuye al descubrimiento de la unidad de transmisión máxima de ruta (PMTU), determinando el tamaño máximo de paquete que se puede transmitir sin fragmentación en una ruta de red específica.
+
+El protocolo también admite la optimización de la red a través de mensajes Redirect, que informan a los hosts y routers sobre mejores direcciones de siguiente salto para destinos específicos. Esto ayuda a mejorar la eficiencia del routing y la optimización de rutas. Los mensajes de Tiempo excedido de ICMP desempeñan un papel crucial en la identificación de bucles de routing y otros problemas que causan retrasos excesivos al señalar cuando el valor del tiempo de vida en un paquete IP llega a cero.
 
 
 ### Exercises:
 1. Convert the following IPv4 address to binary: 192.168.0.1.
+
+192 en binario: 11000000
+168 en binario: 10101000
+0 en binario: 00000000
+1 en binario: 00000001
+
+192.168.0.1 => 11000000.10101000.00000000.00000001 
+
+
 2. Research and list three different classes of IP addresses.
+
+Las direcciones IP se clasifican en tres clases principales según sus rangos de primeros octetos. Cada clase está diseñada para adaptarse a diferentes tamaños de redes, desde pequeñas hasta grandes. 
+
+• Clase A:
+
+- Rango del primer octeto: 1.0.0.0 a 126.255.255.255
+
+- Se caracterizan por un patrón de bits inicial de 0 en el primer octeto. Los tres octetos restantes se utilizan para identificar hosts dentro de la red. Las direcciones de clase A son adecuadas para redes grandes con una gran cantidad de hosts. La máscara de subred predeterminada es 255.0.0.0.
+
+• Clase B:
+
+- Rango del primer octeto: 128.0.0.0 a 191.255.255.255
+
+- Tienen un patrón de bits inicial de 10 en el primer octeto. Los dos octetos siguientes se utilizan para identificar hosts. Las direcciones de clase B se asignan comúnmente a redes de tamaño mediano y ofrecen alrededor de 65.000 direcciones de host únicas. La máscara de subred predeterminada es 255.255.0.0.
+
+• Clase C:
+
+- Rango del primer octeto: 192.0.0.0 a 223.255.255.255
+
+- Comienzan con un patrón de bits inicial de 110 en el primer octeto. Los primeros tres octetos identifican la red y el último octeto se utiliza para la identificación del host. Las direcciones de clase C son adecuadas para redes más pequeñas y proporcionan alrededor de 254 direcciones de host únicas. La máscara de subred predeterminada es 255.255.255.0.
+
 3. Configure a computer to use a static IP address. Document the steps you followed.
+
+1. Abrir Preferencias del Sistema
+   
+2. Acceder a las preferencias de red
+
+3. Seleccionar Conexión de red: esocger Wi-Fi o Ethernet
+
+4. Desbloquear configuración de red
+
+5. Configurar los ajustes de IPv4: seleccionar "Manualmente".
+
+6. Ingresar la dirección IP estática, la máscara de subred y la dirección IP del enrutador
+
+7. Configurar los ajustes del servidor DNS:
+
+8. Ingresar las direcciones del servidor DNS en la sección Servidores DNS.
+
+9. Aplicar cambios y verificar configuración
+- Para verificar que la dirección IP estática se haya configurado correctamente, abrir la Terminal y escribir el comando ifconfig o ipconfig getifaddr en0 para Wi-Fi o ipconfig getifaddr en1 para Ethernet.
 
 ## Routing
 
