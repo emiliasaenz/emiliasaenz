@@ -95,6 +95,15 @@ UDP adopta un enfoque simple hacia la detección y corrección de errores, favor
 En términos de corrección de errores, UDP carece de capacidades inherentes. No hay funciones para la retransmisión o el acuse de recibo de paquetes, lo que significa que UDP no proporciona confirmación de la entrega de paquetes ni mantiene el orden de los paquetes. Esta ausencia contribuye a la eficiencia de UDP, ya que reduce la sobrecarga y la latencia.
 
 4. What are some common applications that use UDP?
+
+- Servicios de transmisión: UDP se utiliza para servicios de transmisión de video y audio. En streaming, mantener un flujo continuo de datos es más importante que garantizar la entrega de cada paquete. La baja latencia de UDP se adapta a la naturaleza del streaming en tiempo real.
+
+- Juegos en línea: en juegos en línea multijugador, se prefiere UDP porque reduce la latencia y el retraso. La transmisión rápida de datos del estado del juego es crucial para una experiencia de juego perfecta, incluso si eso significa una pérdida ocasional de datos.
+
+- Voz sobre IP (VoIP): aplicaciones como Skype y otros servicios de VoIP utilizan UDP para transmitir datos de voz. La prioridad aquí es mantener la comunicación en tiempo real, donde los retrasos causados ​​por las retransmisiones de paquetes serían perjudiciales.
+
+- Transmisiones de difusión y multidifusión: UDP admite modos de transmisión de difusión y multidifusión, es buena opción para aplicaciones que envían datos a múltiples destinatarios simultáneamente, como en algunos tipos de sistemas de videoconferencia o servicios de distribución de información.
+  
 5. Discuss the role of ports in UDP communication.
 
 
