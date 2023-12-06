@@ -61,10 +61,38 @@ Además, la capa de transporte gestiona el control de flujo, regulando la veloci
 ### UDP
 
 1. What is UDP and how does it differ from TCP?
+
+UDP es un protocolo sin conexión, por lo que no establece una conexión dedicada antes de enviar datos. Esto hace que UDP sea más rápido y eficiente para aplicaciones donde la velocidad es más importante que la precisión. UDP envía datagramas, sin esperar la confirmación del receptor y no proporciona corrección de errores. Si un paquete se pierde o se daña, UDP no lo reenvía. Además, UDP carece de control de flujo, lo que permite enviar datos en cualquier momento sin tener en cuenta la capacidad del receptor para procesarlos. Esto lo hace adecuado para aplicaciones en tiempo real donde la latencia es un factor crítico.
+
+TCP es un protocolo orientado a la conexión. Requiere que se establezca una conexión entre el remitente y el receptor antes de la transmisión de datos, lo que garantiza un canal de comunicación confiable, eficiente y sin congestión. TCP es responsable de la verificación y corrección de errores; retransmite paquetes perdidos o dañados hasta que se reciben correctamente. Además, TCP incorpora control de flujo y congestión, ajustando la velocidad de transmisión de datos en función de la capacidad de la red y las capacidades de procesamiento del receptor. 
+
 2. Explain the advantages and disadvantages of using UDP.
+
+Ventajas
+ 
+ - Gastos bajos: UDP es liviano y tiene un costo mínimo de protocolo. No requiere configuración de conexión, lo que simplifica el protocolo y reduce los datos que se envían.
+
+- Velocidad: debido a su simplicidad, permite una transmisión de datos más rápida. Esto lo hace adecuado para aplicaciones donde la velocidad es más importante que la confiabilidad.
+
+- Sin control de congestión: puede enviar datos continuamente sin preocuparse por la congestión de la red ya que no la implementa
+
+- Aplicaciones en tiempo real: su velocidad y baja latencia hacen que UDP sea ideal para aplicaciones en tiempo real como juegos en línea o transmisiones en vivo
+
+Desventajas
+
+- Poco confiable e inseguro: no garantiza la entrega, el orden o la integridad de los datos. No existe ningún mecanismo para reconocer los datos recibidos, retransmitir paquetes perdidos o detectar errores, lo que puede provocar la pérdida o corrupción de datos.
+
+- Falta de control de flujo: sin control de flujo, un remitente puede abrumar a un receptor enviando paquetes más rápido de lo que pueden procesarse, lo que provoca la pérdida de paquetes.
+
+- Susceptibilidad a la congestión: dado que UDP no gestiona la congestión, podría provocar pérdida de paquetes y un rendimiento degradado para todos los usuarios de la red.
+
+- Sin funciones de seguridad integradas: carece de mecanismos de seguridad integrados, lo que puede ser una preocupación para las aplicaciones que requieren una transmisión de datos segura.
+
 3. How does UDP handle error detection and correction?
-4. What are some common applications that use UDP?
-5. Discuss the role of ports in UDP communication.
+
+4. 
+5. What are some common applications that use UDP?
+6. Discuss the role of ports in UDP communication.
 
 
 
