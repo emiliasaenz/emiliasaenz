@@ -90,9 +90,12 @@ Desventajas
 
 3. How does UDP handle error detection and correction?
 
-4. 
-5. What are some common applications that use UDP?
-6. Discuss the role of ports in UDP communication.
+UDP adopta un enfoque simple hacia la detección y corrección de errores, favoreciendo la velocidad y la eficiencia sobre la confiabilidad de la transmisión de datos. Incorpora un mecanismo básico de detección de errores mediante sumas de comprobación. Cada paquete UDP incluye un campo de suma de verificación, calculado por el remitente en función del contenido del paquete. En el destino, el receptor vuelve a calcular esta suma de verificación para comprobar la integridad de los datos. Si las sumas de verificación coinciden, los datos se consideran válidos; en caso contrario indica posibles errores durante la transmisión.
+
+En términos de corrección de errores, UDP carece de capacidades inherentes. No hay funciones para la retransmisión o el acuse de recibo de paquetes, lo que significa que UDP no proporciona confirmación de la entrega de paquetes ni mantiene el orden de los paquetes. Esta ausencia contribuye a la eficiencia de UDP, ya que reduce la sobrecarga y la latencia.
+
+4. What are some common applications that use UDP?
+5. Discuss the role of ports in UDP communication.
 
 
 
