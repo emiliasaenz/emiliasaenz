@@ -10,8 +10,41 @@ Sections: 5.1, 5.2, 6.1, 6.2, and 6.3
 ### End-to-End Protocols
 
 1. What is the purpose of end-to-end protocols in computer networking?
+
+Son esenciales para una comunicación confiable y eficiente entre dispositivos a través de una red. Su función principal incluye garantizar la integridad de los datos, donde realizan comprobaciones de errores y solicitan la retransmisión de datos si es necesario, lo que ayuda a mantener la precisión de los datos transmitidos.
+
+Otra función clave es proporcionar una transmisión confiable. Garantizan que los paquetes de datos enviados sean recibidos por el destino en el orden correcto, sin pérdidas ni daños. Además, manejan el control de flujo, regulando la velocidad de transmisión de datos para evitar la congestión de la red y asegurar un uso eficiente de los recusos de la red, evitando sobrecarga en la mimsa.
+
 2. Explain the difference between connection-oriented and connectionless protocols.
+
+Los protocolos orientados a la conexión, como TCP, requieren un proceso de configuración inicial para establecer una conexión entre el remitente y el receptor antes de transmitir cualquier dato. Esta configuración, que implica un mecanismo de protocolo de enlace, es crucial para definir los parámetros de la sesión de comunicación. Estos protocolos son confiables, ya que mantienen el estado de la conexión, monitorean la transmisión de paquetes de datos y brindan funciones como verificación de errores o retransmisión de paquetes perdidos. También gestionan el control del flujo y la congestión, lo que los hace ideales para aplicaciones donde la integridad y el orden de los datos son esenciales, como la navegación web, el correo electrónico y las transferencias de archivos.
+
+Por el contrario, los protocolos sin conexión, como UDP, no requieren una conexión preestablecida. Cada paquete de datos se envía de forma independiente, sin un protocolo de enlace ni un estado de sesión mantenido. La transmisión de datos es más rápida y eficiente, sin embargo, no es tan confiable, ya que no garantiza que los paquetes de datos lleguen en orden o lleguen en absoluto, y normalmente no existe ningún mecanismo para reconocer los paquetes recibidos o retransmitir los perdidos. Esto los hace adecuados para aplicaciones de transmisión de medios o juegos en línea.
+
 3. What are the advantages and disadvantages of using end-to-end protocols?
+
+Ventajas
+
+- Confiabilidad: proporcionan mecanismos para verificar errores y retransmitir paquetes perdidos, lo que garantiza una transmisión de datos confiable.
+
+- Integridad y orden de los datos: garantizan que los datos se reciban tal como se enviaron, sin corrupción y en el orden correcto.
+
+- Control de flujo: gestionan la velocidad a la que se envían los datos, evitando que el receptor se vea abrumado por datos que llegan más rápido de lo que se pueden procesar.
+
+- Multiplexing: admiten múltiples aplicaciones de red que se ejecutan simultáneamente, administrando de manera eficiente múltiples flujos de datos.
+
+- Seguridad: incorporan funciones de seguridad como cifrado y autenticación, lo que garantiza una transmisión de datos segura. 
+
+Desventajas
+
+- Gastos generales: establecer y mantener conexiones, verificación de errores y otros mecanismos de confiabilidad pueden generar gastos generales significativos, lo que genera ineficiencias.
+
+- Latencia: establecer de conexiones, junto con los mecanismos de confiabilidad y control de flujo, puede introducir latencia, lo que es problemático para aplicaciones en tiempo real
+
+- Complejidad: implementar y gestionar protocolos de un extremo a otro puede resultar complejo debido a la necesidad de manejar diversos aspectos como la corrección de errores, la secuenciación y el control de flujo.
+
+- Uso intensivo de recursos: mantener la información de estado, como el estado de la conexión y el seguimiento de paquetes, requiere memoria y potencia de procesamiento adicionales.
+
 4. How does the Internet Protocol (IP) provide end-to-end delivery?
 5. What is the role of the Transport Layer in end-to-end protocols?
 
