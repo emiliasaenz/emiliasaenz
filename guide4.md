@@ -106,11 +106,20 @@ En términos de corrección de errores, UDP carece de capacidades inherentes. No
   
 5. Discuss the role of ports in UDP communication.
 
+En la comunicación UDP, los puertos sirven como componentes esenciales para dirigir el flujo de datos entre diferentes aplicaciones. Cada paquete UDP incluye dos campos de puerto en su encabezado: el puerto de origen y el puerto de destino. Este sistema de identificación de puertos permite que UDP admita la comunicación bidireccional de manera eficiente, asegurando que los paquetes de datos lleguen a la aplicación deseada en un dispositivo.
 
+Los puertos en UDP facilitan la multiplexación, permitiendo que múltiples aplicaciones utilicen recursos de red simultáneamente en una única interfaz de red física o dirección IP. Esto se logra asignando números de puerto únicos a diferentes aplicaciones o servicios. Existen puertos estandarizados conocidos para servicios comunes y puertos efímeros para sesiones temporales iniciadas por aplicaciones cliente. Dado que UDP es un protocolo sin conexión, no mantiene ningún estado de conexión para los puertos, lo que simplifica la gestión de los puertos. Cada paquete UDP se trata de forma independiente, y los puertos actúan como identificadores simples para enrutar datos. 
 
 ### TCP
 
 1. What is TCP and why is it considered a reliable protocol?
+
+TCP es un protocolo del conjunto de protocolos de Internet, que proporciona una entrega de datos confiable, ordenada y con verificación de errores. Como protocolo orientado a conexión, TCP establece una conexión dedicada antes de que comience la transmisión de datos y la mantiene hasta que se completa el proceso de comunicación. Esto se inicia mediante un mecanismo de protocolo de enlace, lo que garantiza que tanto el remitente como el receptor estén preparados para el intercambio de datos. La confiabilidad de TCP se debe a su secuenciación de datos, donde a cada byte de datos se le asigna un número de secuencia, lo que permite al extremo receptor reordenar los segmentos que llegan fuera de secuencia y solicitar la retransmisión de cualquier dato perdido.
+
+La confiabilidad de TCP se ve reforzada por sus mecanismos de detección y corrección de errores. Emplea sumas de verificación para validar la integridad de los paquetes de datos y, en caso de detectar errores, TCP descarta el paquete erróneo y activa una retransmisión. Esto garantiza que las aplicaciones reciban sólo datos sin errores. Además, TCP gestiona el control del flujo, ajustando la velocidad de transmisión de datos en función de la capacidad de procesamiento del receptor y de la capacidad de la red, lo que evita abrumar al receptor. El control de la congestión es otra característica clave, donde TCP monitorea la congestión de la red y modifica la velocidad de transmisión de datos en consecuencia para mantener la estabilidad y eficiencia de la red.
+
+La elección de TCP es ideal para aplicaciones que requieren una transmisión de datos completa y confiable, como navegación web, correo electrónico y transferencias de archivos. Sin embargo, estas características de confiabilidad introducen una mayor latencia y sobrecarga, lo que hace que TCP sea menos adecuado para aplicaciones donde la velocidad y la eficiencia son más críticas que la precisión y la integridad de los datos, como en streaming o juegos, donde podría preferirse UDP.
+
 2. Explain the three-way handshake process used by TCP to establish a connection.
 3. How does TCP handle flow control and congestion control?
 4. Discuss the advantages and disadvantages of using TCP.
