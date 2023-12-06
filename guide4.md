@@ -46,8 +46,17 @@ Desventajas
 - Uso intensivo de recursos: mantener la información de estado, como el estado de la conexión y el seguimiento de paquetes, requiere memoria y potencia de procesamiento adicionales.
 
 4. How does the Internet Protocol (IP) provide end-to-end delivery?
+
+El IP es esencial para la entrega de datos de un extremo a otro a través de Internet, aunque no garantiza confiabilidad en la entrega. La función principal del IP es el direccionamiento y el enrutamiento. Asigna direcciones únicas a cada dispositivo de la red, que son cruciales para identificar dispositivos y guiar los paquetes de datos desde su origen hasta su destino. Además, IP emplea enrutamiento de red descentralizado, donde los enrutadores deciden de forma independiente las mejores rutas para el reenvío de paquetes, adaptándose dinámicamente a los cambios en el estado de la red.
+
+Sin embargo, IP es un protocolo sin estado, lo que significa que trata cada paquete de forma independiente y no mantiene información sobre el historial de paquetes, lo que contribuye a la escalabilidad y solidez de Internet. Admite la fragmentación y el reensamblaje, descomponiendo paquetes grandes para ajustarlos a las restricciones de la red y reensamblándolos en su destino. La interoperabilidad de IP también es clave, ya que permite que varias redes y dispositivos se comuniquen sin problemas. 
+
+
 5. What is the role of the Transport Layer in end-to-end protocols?
 
+La capa de transporte es parte integral de la comunicación de un extremo a otro, cerrando la brecha entre la capa de aplicación y la capa de Internet de nivel inferior. Su función principal es proporcionar servicios de comunicación a las aplicaciones, permitiéndoles enviar y recibir datos sin preocuparse por la infraestructura de red subyacente. La clave para su funcionamiento es la provisión de una transferencia de datos confiable, particularmente en protocolos orientados a conexión.
+
+Además, la capa de transporte gestiona el control de flujo, regulando la velocidad de transmisión de datos para evitar que el receptor se vea abrumado. También desempeña un papel fundamental en el control de la congestión, ayudando a prevenir sobrecargas de la red y a mantener un funcionamiento eficiente de la red. Puede manejar datos de múltiples aplicaciones simultáneamente mediante la asignación de identificadores únicos a diferentes flujos de datos.
 
 ### UDP
 
