@@ -127,6 +127,13 @@ El paso final del protocolo de enlace implica que el cliente envíe un paquete A
 
 3. How does TCP handle flow control and congestion control?
 
+TCP es esencial para garantizar una transmisión de datos confiable y eficiente a través de Internet y lo hace mediante dos mecanismos: control de flujo y control de congestión.
+
+- Control de flujo: gestiona la transferencia de datos entre el remitente y el receptor para evitar que el remitente abrume al receptor. Se realiza mediante sliding window. Ambas partes acuerdan un tamaño de ventana, que es la cantidad máxima de datos no reconocidos permitidos en tránsito. La ventana se ajusta a medida que se envían y confirman los datos, lo que permite al remitente enviar solo una cantidad de datos que el receptor puede manejar en un momento dado.
+
+- Control de Congestión: gestiona el volumen de datos en toda la red para evitar sobrecargarla. Utiliza un conjunto de algoritmos para este propósito, comenzando con Slow Start, donde empieza con una pequeña ventana de congestión y luego la aumenta gradualmente. Esta ventana crece exponencialmente hasta que se alcanza un umbral o se produce una pérdida de paquetes, lo que indica una posible congestión de la red. Luego, cambia a Evitar la congestión, donde el aumento del tamaño de la ventana se vuelve lineal. En caso de pérdida de paquetes, TCP utiliza mecanismos como Fast Retransmit y Fast Recovery para manejar las retransmisiones y recuperarse de la pérdida de paquetes sin reducir drásticamente el tamaño de la ventana. Sin embargo, en escenarios de congestión severa indicados por tiempos de espera, TCP puede reducir significativamente la ventana de congestión e iniciar nuevamente el proceso de inicio lento.
+
+En esencia, el control de flujo se centra en la relación emisor-receptor, garantizando que los datos se envíen a un ritmo manejable, mientras que el control de congestión se ocupa del tráfico general de la red, ajustando la velocidad de transmisión de datos para evitar la congestión de la red. Ambos sistemas son vitales para el funcionamiento fluido y eficiente de las comunicaciones TCP.
 
 4. Discuss the advantages and disadvantages of using TCP.
 5. What are some common applications that rely on TCP for communication?
